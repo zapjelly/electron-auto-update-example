@@ -67,7 +67,12 @@ jobs:
           mkdir s3Folder
           cd s3Folder
           mkdir mac
+          cd mac
+          touch mac.txt
+          cd ../
           mkdir win
+          cd win
+          touch win.txt
       - name: Upload to s3
         uses: reggionick/s3-deploy@v3
         with:
