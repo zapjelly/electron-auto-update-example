@@ -1,40 +1,58 @@
-{
-  "name": "electron-auto-update-example",
-  "version": "0.1.1",
-  "description": "",
-  "main": "main.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zapjelly/electron-auto-update-example.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "build": "electron-builder build --mac --win --publish never",
-    "deploy": "electron-builder build --mac --win --publish never",
-    "electron:package": "electron-builder -c.extraMetadata.main=main.js -mw --publish never"
-  },
-  "build": {
-    "npmRebuild": false
-  },
-  "publish": {
-    "provider": "github",
-    "repo": "electron-auto-update-example",
-    "owner": "zapjelly",
-    "releaseType": "release",
-    "publishAutoUpdate": true
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "electron": "^12.0.4",
-    "electron-builder": "^22.10.5",
-    "electron-is-dev": "^2.0.0",
-    "path": "^0.12.7"
-  },
-  "dependencies": {
-    "electron-auto-update": "^1.2.2",
-    "electron-is-dev": "^2.0.0",
-    "electron-updater": "^4.0.6"
-  }
-}
+# From https://medium.com/@johnjjung/building-an-electron-app-on-github-actions-windows-and-macos-53ab69703f7c
+name: CI
+
+# Run on push to 'release branch or master' branch
+on: push
+
+# List contents
+jobs:
+  build_on_mac:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          # Update with your branch, that has the latest change
+          ref: "feature/test-autoupdate"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 15
+
+      - name: Create env file
+        run: |
+          touch .env
+          echo REACT_APP_SUPPORT_EMAIL=help@cashflowcoachingkit.com.au >> .env
+          echo REACT_APP_AWS_CONTENT_DELIVERY_URL=di8he5rpe0sl7.cloudfront.net >> .env
+          echo REACT_APP_GA_ID=UA-177371209-1 >> .env
+          echo REACT_APP_VERSION=$npm_package_version >> .env
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build electron
+        run: yarn electron:package
+
+      - name: See built binaries
+        run: ls ./dist
+
+      # Make available on GitHub Actions page
+      - name: Extract version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.1.1
+      - uses: actions/upload-artifact@v2
+        with:
+          name: macOS
+          path: ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Windows
+          path: ./dist/electron-auto-update-example-Setup-${{ steps.extract_version.outputs.version }}.exe
+
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
+        with:
+          body: ${{ steps.extract_version.outputs.version }}
+          name: ${{ steps.extract_version.outputs.version }}
+          tag_name: v${{ steps.extract_version.outputs.version }}
+          files: ./dist/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
