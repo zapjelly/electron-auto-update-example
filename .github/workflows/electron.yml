@@ -62,22 +62,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: ${{ secrets.S3_BUCKET_REGION }}
-      - name: Upload to s3 mac
+      - name: Rearrange file for s3
+        run: |
+          mkdir s3Folder
+          cd s3Folder
+          mkdir mac
+          mkdir win
+      - name: Upload to s3
         uses: reggionick/s3-deploy@v3
         with:
-          folder: dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg
-          bucket: ${{ secrets.S3_BUCKET }}/mac
-          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          invalidation: /
-          delete-removed: true
-          no-cache: true
-          private: true
-      - name: Upload to s3 win
-        uses: reggionick/s3-deploy@v3
-        with:
-          folder: dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe
-          bucket: ${{ secrets.S3_BUCKET }}/win
+          folder: s3Folder
+          bucket: ${{ secrets.S3_BUCKET }}
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           invalidation: /
