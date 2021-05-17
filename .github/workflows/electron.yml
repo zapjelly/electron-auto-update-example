@@ -34,19 +34,6 @@ jobs:
       - name: See built binaries
         run: ls ./dist
 
-      - name: Rearrange file for s3
-        run: |
-          mkdir s3Folder
-          cp ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./s3Folder/electron-auto-update-example.dmg
-          cp ./dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./s3Folder/electron-auto-update-example.Setup.exe
-          cd s3Folder
-          mkdir mac
-          cd mac
-          mv ../electron-auto-update-example.dmg .
-          mkdir win
-          cd win
-          mv ../electron-auto-update-example.Setup.exe .
-
       # Make available on GitHub Actions page
       - name: Extract version
         id: extract_version
@@ -75,7 +62,19 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: ${{ secrets.S3_BUCKET_REGION }}
-
+      - name: Rearrange file for s3
+        uses: softprops/action-gh-release@v1
+        run: |
+          mkdir s3Folder
+          cp ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./s3Folder/electron-auto-update-example.dmg
+          cp ./dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./s3Folder/electron-auto-update-example.Setup.exe
+          cd s3Folder
+          mkdir mac
+          cd mac
+          mv ../electron-auto-update-example.dmg .
+          mkdir win
+          cd win
+          mv ../electron-auto-update-example.Setup.exe .
       - name: Upload to s3
         uses: reggionick/s3-deploy@v3
         with:
