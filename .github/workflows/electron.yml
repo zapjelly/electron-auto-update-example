@@ -68,11 +68,11 @@ jobs:
           cd s3Folder
           mkdir mac
           cd mac
-          cp ../dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./electron-auto-update-example.dmg
+          cp ../../dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./electron-auto-update-example.dmg
           cd ../
           mkdir win
           cd win
-          cp ../dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./electron-auto-update-example.Setup.exe
+          cp ../../dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./electron-auto-update-example.Setup.exe
       - name: Upload to s3
         uses: reggionick/s3-deploy@v3
         with:
