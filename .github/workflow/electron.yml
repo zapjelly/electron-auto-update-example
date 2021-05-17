@@ -2,10 +2,7 @@
 name: CI
 
 # Run on push to 'release branch or master' branch
-on:
-  push:
-    branches:
-      - "feature/test-autoupdate"
+on: push
 
 # List contents
 jobs:
