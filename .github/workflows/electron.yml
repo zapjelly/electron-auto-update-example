@@ -45,7 +45,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Windows
-          path: ./dist/electron-auto-update-example-Setup-${{ steps.extract_version.outputs.version }}.exe
+          path: ./dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
