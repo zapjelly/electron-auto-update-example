@@ -65,14 +65,15 @@ jobs:
       - name: Rearrange file for s3
         run: |
           mkdir s3Folder
+          cp ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./s3Folder/electron-auto-update-example.dmg
+          cp ./dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./s3Folder/electron-auto-update-example.Setup.exe
           cd s3Folder
           mkdir mac
           cd mac
-          cp ../../../dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./electron-auto-update-example.dmg
-          cd ../
+          mv ../electron-auto-update-example.dmg .
           mkdir win
           cd win
-          cp ../../../dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./electron-auto-update-example.Setup.exe
+          mv ../electron-auto-update-example.Setup.exe .
       - name: Upload to s3
         uses: reggionick/s3-deploy@v3
         with:
