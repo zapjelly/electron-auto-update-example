@@ -65,8 +65,8 @@ jobs:
       - name: Rearrange file for s3
         run: |
           mkdir s3Folder
-          cp ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./s3Folder/electron-auto-update-example.dmg
-          cp ./dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./s3Folder/electron-auto-update-example.Setup.exe
+          cp dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg ./s3Folder/electron-auto-update-example.dmg
+          cp dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe ./s3Folder/electron-auto-update-example.Setup.exe
           cd s3Folder
           mkdir mac
           cd mac
