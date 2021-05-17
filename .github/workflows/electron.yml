@@ -71,6 +71,7 @@ jobs:
           mkdir mac
           cd mac
           mv ../electron-auto-update-example.dmg .
+          cd ../
           mkdir win
           cd win
           mv ../electron-auto-update-example.Setup.exe .
