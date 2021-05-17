@@ -46,7 +46,6 @@ jobs:
         with:
           name: Windows
           path: ./dist/electron-auto-update-example.Setup.${{ steps.extract_version.outputs.version }}.exe
-
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
         with:
@@ -56,3 +55,14 @@ jobs:
           files: ./dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload to s3
+        uses: reggionick/s3-deploy@v3
+        with:
+          folder: dist
+          bucket: ${{ secrets.S3_BUCKET }}
+          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+          invalidation: /
+            delete-removed: true
+            no-cache: true
+            private: true
