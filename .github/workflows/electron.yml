@@ -55,34 +55,3 @@ jobs:
           files: ./dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: ${{ secrets.S3_BUCKET_REGION }}
-      - name: Rearrange file for s3
-        run: |
-          mkdir s3Folder
-          cp ./dist/*.dmg ./s3Folder/electron-auto-update-example.dmg
-          cp ./dist/*.exe ./s3Folder/electron-auto-update-example.Setup.exe
-          cd s3Folder
-          mkdir mac
-          cd mac
-          mv ../electron-auto-update-example.dmg .
-          cd ../
-          mkdir win
-          cd win
-          mv ../electron-auto-update-example.Setup.exe .
-      - name: Upload to s3
-        uses: reggionick/s3-deploy@v3
-        with:
-          folder: s3Folder
-          bucket: ${{ secrets.S3_BUCKET }}
-          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          invalidation: /
-          delete-removed: true
-          no-cache: true
-          private: true
