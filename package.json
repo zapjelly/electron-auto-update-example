@@ -12,7 +12,7 @@
     "start": "electron .",
     "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder build --mac --win --publish never",
-    "electron:package": "debug=electron-builder -c.extraMetadata.main=main.js -mw --publish never"
+    "electron:package": "electron-builder -c.extraMetadata.main=main.js -mw --publish never"
   },
   "build": {
     "npmRebuild": false
