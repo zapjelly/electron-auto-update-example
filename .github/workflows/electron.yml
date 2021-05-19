@@ -33,7 +33,7 @@ jobs:
           CSC_LINK: ${{ secrets.CSC_LINK }}
           CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn package:standalone
+        run: yarn electron:package
 
       - name: See built binaries
         run: ls ./dist

@@ -16,7 +16,11 @@
     "package:standalone": "electron-builder -c.extraMetadata.main=main.js -mw --64 CSC_LINK=./build/all-certs.p12 CSC_KEY_PASSWORD=password"
   },
   "build": {
-    "npmRebuild": false
+    "npmRebuild": false,
+    "mac": {
+      "certificateFile": "./build/all-certs.p12",
+      "certificatePassword": "password"
+    }
   },
   "publish": {
     "provider": "github",
