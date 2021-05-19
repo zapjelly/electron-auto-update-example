@@ -18,8 +18,10 @@
   "build": {
     "npmRebuild": false,
     "mac": {
-      "CSC_LINK": "./build/all-certs.p12",
-      "CSC_KEY_PASSWORD": "password"
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist"
     }
   },
   "publish": {
