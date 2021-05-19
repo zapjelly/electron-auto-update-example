@@ -13,7 +13,7 @@
     "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder build --mac --win --publish never",
     "electron:package": "electron-builder -c.extraMetadata.main=main.js -mw --publish never",
-    "package:standalone": "electron-builder -c.extraMetadata.main=main.js -mw && CSC_LINK=./build/all-certs.p12 electron-builder"
+    "package:standalone": "electron-builder -c.extraMetadata.main=main.js -mw --64 CSC_LINK=./build/all-certs.p12 CSC_KEY_PASSWORD=password"
   },
   "build": {
     "npmRebuild": false
