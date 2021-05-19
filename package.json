@@ -18,8 +18,8 @@
   "build": {
     "npmRebuild": false,
     "mac": {
-      "certificateFile": "./build/all-certs.p12",
-      "certificatePassword": "password"
+      "CSC_LINK": "./build/all-certs.p12",
+      "CSC_KEY_PASSWORD": "password"
     }
   },
   "publish": {
