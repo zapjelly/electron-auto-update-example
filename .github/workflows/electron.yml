@@ -29,6 +29,10 @@ jobs:
         run: yarn install
 
       - name: Build electron
+        env:
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn electron:package
 
       - name: See built binaries
@@ -55,11 +59,7 @@ jobs:
           files: ./dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: release
-        env:
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-          CSC_LINK: ${{ secrets.CSC_LINK }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # - name: Configure AWS Credentials
       #   uses: aws-actions/configure-aws-credentials@v1
       #   with:
