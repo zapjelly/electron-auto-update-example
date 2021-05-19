@@ -1,6 +1,6 @@
 {
   "name": "electron-auto-update-example",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "main.js",
   "repository": {
@@ -12,8 +12,7 @@
     "start": "electron .",
     "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder build --mac --win --publish never",
-    "electron:package": "electron-builder -c.extraMetadata.main=main.js -mw --publish never",
-    "package:standalone": "electron-builder -c.extraMetadata.main=main.js -mw --64 CSC_LINK=./build/all-certs.p12 CSC_KEY_PASSWORD=password"
+    "electron:package": "electron-builder -c.extraMetadata.main=main.js -mw --publish never"
   },
   "build": {
     "npmRebuild": false,
