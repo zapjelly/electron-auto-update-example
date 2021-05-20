@@ -19,9 +19,8 @@
     "mac": {
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
-      "entitlements": "build/entitlements.mac.plist",
-      "entitlementsInherit": "build/entitlements.mac.plist",
-      "identity": "Micah Hobbs"
+      "entitlements": "assets/mac/entitlements.mac.inherit.plist",
+      "entitlementsInherit": "assets/mac/entitlements.mac.inherit.plist"
     }
   },
   "publish": {
