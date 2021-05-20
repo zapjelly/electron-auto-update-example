@@ -20,7 +20,8 @@
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "entitlements": "assets/mac/entitlements.mac.inherit.plist",
-      "entitlementsInherit": "assets/mac/entitlements.mac.inherit.plist"
+      "entitlementsInherit": "assets/mac/entitlements.mac.inherit.plist",
+      "type": "development"
     }
   },
   "publish": {
