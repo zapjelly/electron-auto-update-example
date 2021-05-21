@@ -1,0 +1,382 @@
+
+> electron-auto-update-example@0.0.4 electron:package
+> DEBUG=electron-builder electron-builder -c.extraMetadata.main=main.js -mw --publish always
+
+  • electron-builder  version=22.10.5 os=20.4.0
+  • loaded configuration  file=package.json ("build" field)
+  • effective config  config=
+                        directories:
+                          output: dist
+                          buildResources: build
+                        npmRebuild: false
+                        mac:
+                          hardenedRuntime: true
+                          gatekeeperAssess: false
+                          entitlements: assets/mac/entitlements.mac.plist
+                          entitlementsInherit: assets/mac/entitlements.mac.plist
+                        extraMetadata:
+                          main: main.js
+                        
+  • description is missed in the package.json  appPackageFile=/Users/cindypak/Playground/electron-auto-update-example/package.json
+  • skipped dependencies rebuild  reason=npmRebuild is set to false
+  • packaging       platform=darwin arch=x64 electron=12.0.7 appOutDir=dist/mac
+  • Unpacking electron zip  zipPath=undefined
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder unpack-electron --configuration [{"platform":"darwin","arch":"x64","version":"12.0.7"}] --output /Users/cindypak/Playground/electron-auto-update-example/dist/mac --distMacOsAppName Electron.app
+  • map async       taskCount=2
+  • map async       taskCount=1
+  • map async       taskCount=251
+  • exited          command=app-builder code=0 pid=12342
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder node-dep-tree --dir /Users/cindypak/Playground/electron-auto-update-example
+  • unresolved deps  unresolved=electron-updater nodeModuleDir=/Users/cindypak/node_modules round=0
+  • unresolved deps  unresolved=bluebirdcompare-versionisbinaryfileminimistplist nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=base64-jsxmldom nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=js-yamllazy-vallodash.escaperegexplodash.isequal nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=lru-cache nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=debugsax nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=graceful-fs nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=universalify nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=graceful-fs nodeModuleDir=/Users/cindypak/Playground/electron-auto-update-example/node_modules round=0
+  • unresolved deps  unresolved=graceful-fs nodeModuleDir=/Users/cindypak/node_modules round=1
+  • exited          command=app-builder code=0 pid=12343 out=[{"dir":"/Users/cindypak/Playground/electron-auto-update-example/node_modules","deps":[{"name":"argparse","version":"2.0.1"},{"name":"base64-js","version":"1.5.1"},{"name":"bluebird","version":"3.7.2"},{"name":"buffer-alloc","version":"1.2.0"},{"name":"buffer-alloc-unsafe","version":"1.1.0"},{"name":"buffer-fill","version":"1.0.0"},{"name":"compare-version","version":"0.1.2"},{"name":"debug","version":"4.3.2"},{"name":"electron-auto-update","version":"1.2.2"},{"name":"electron-is-dev","version":"2.0.0"},{"name":"electron-osx-sign","version":"0.5.0"},{"name":"electron-updater","version":"4.3.9"},{"name":"graceful-fs","version":"4.2.6"},{"name":"isbinaryfile","version":"3.0.3"},{"name":"js-yaml","version":"4.1.0"},{"name":"lazy-val","version":"1.0.5"},{"name":"lodash.escaperegexp","version":"4.1.2"},{"name":"lodash.isequal","version":"4.5.0"},{"name":"lru-cache","version":"6.0.0"},{"name":"minimist","version":"1.2.5"},{"name":"ms","version":"2.1.2"},{"name":"plist","version":"3.0.2"},{"name":"sax","version":"1.2.4"},{"name":"universalify","version":"0.1.2"},{"name":"xmldom","version":"0.5.0"},{"name":"yallist","version":"4.0.0"}]},{"dir":"/Users/cindypak/Playground/electron-auto-update-example/node_modules/electron-osx-sign/node_modules","deps":[{"name":"debug","version":"2.6.9"},{"name":"ms","version":"2.0.0"}]},{"dir":"/Users/cindypak/Playground/electron-auto-update-example/node_modules/electron-updater/node_modules","deps":[{"name":"builder-util-runtime","version":"8.7.5"},{"name":"fs-extra","version":"10.0.0"},{"name":"jsonfile","version":"6.1.0"},{"name":"semver","version":"7.3.5"},{"name":"universalify","version":"2.0.0"}]},{"dir":"/Users/cindypak/Playground/electron-auto-update-example/node_modules/plist/node_modules","deps":[{"name":"xmlbuilder","version":"9.0.7"}]}]
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder decode-plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Frameworks/Electron Helper.app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Frameworks/Electron Helper EH.app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Frameworks/Electron Helper NP.app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Frameworks/Electron Helper (Renderer).app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Frameworks/Electron Helper (Plugin).app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Frameworks/Electron Helper (GPU).app/Contents/Info.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/Electron.app/Contents/Library/LoginItems/Electron Login Helper.app/Contents/Info.plist
+  • map async       taskCount=8
+  • exited          command=app-builder code=0 pid=12344 out=[{"NSHighResolutionCapable":true,"NSPrincipalClass":"AtomApplication","NSQuitAlwaysKeepsWindows":false,"CFBundleExecutable":"Electron","LSMinimumSystemVersion":"10.11.0","CFBundleDisplayName":"Electron","DTCompiler":"com.apple.compilers.llvm.clang.1_0","NSAppTransportSecurity":{"NSAllowsArbitraryLoads":true},"NSBluetoothAlwaysUsageDescription":"This app needs access to Bluetooth","NSMicrophoneUsageDescription":"This app needs access to the microphone","CFBundleShortVersionString":"12.0.7","CFBundlePackageType":"APPL","NSBluetoothPeripheralUsageDescription":"This app needs access to Bluetooth","NSSupportsAutomaticGraphicsSwitching":true,"CFBundleInfoDictionaryVersion":"6.0","CFBundleIdentifier":"com.github.Electron","CFBundleName":"Electron","DTXcodeBuild":"12B45b","LSApplicationCategoryType":"public.app-category.developer-tools","NSMainNibFile":"MainMenu","CFBundleIconFile":"electron.icns","DTSDKName":"macosx11.0","DTXcode":"1220","NSCameraUsageDescription":"This app needs access to the camera","DTSDKBuild":"11.0","NSRequiresAquaSystemAppearance":false,"CFBundleVersion":"12.0.7"},{"DTSDKName":"macosx11.0","CFBundleName":"Electron Helper","CFBundlePackageType":"APPL","DTSDKBuild":"11.0","DTXcode":"1220","DTXcodeBuild":"12B45b","LSUIElement":true,"NSSupportsAutomaticGraphicsSwitching":true,"CFBundleIdentifier":"com.github.Electron.helper","DTCompiler":"com.apple.compilers.llvm.clang.1_0"},null,null,{"DTSDKName":"macosx11.0","DTXcodeBuild":"12B45b","LSUIElement":true,"NSSupportsAutomaticGraphicsSwitching":true,"CFBundleIdentifier":"com.github.Electron.helper","CFBundleName":"Electron Helper (Renderer)","CFBundlePackageType":"APPL","DTCompiler":"com.apple.compilers.llvm.clang.1_0","DTSDKBuild":"11.0","DTXcode":"1220"},{"DTXcodeBuild":"12B45b","CFBundleIdentifier":"com.github.Electron.helper","CFBundleName":"Electron Helper (Plugin)","DTSDKName":"macosx11.0","DTXcode":"1220","NSSupportsAutomaticGraphicsSwitching":true,"CFBundlePackageType":"APPL","DTCompiler":"com.apple.compilers.llvm.clang.1_0","DTSDKBuild":"11.0","LSUIElement":true},{"LSUIElement":true,"DTXcodeBuild":"12B45b","CFBundleIdentifier":"com.github.Electron.helper","CFBundleName":"Electron Helper (GPU)","CFBundlePackageType":"APPL","DTCompiler":"com.apple.compilers.llvm.clang.1_0","DTSDKBuild":"11.0","DTSDKName":"macosx11.0","DTXcode":"1220","NSSupportsAutomaticGraphicsSwitching":true},null]
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder icon --format icns --root /Users/cindypak/Playground/electron-auto-update-example/build --root /Users/cindypak/Playground/electron-auto-update-example --out /Users/cindypak/Playground/electron-auto-update-example/dist/.icon-icns
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icon.icns
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icon.icns
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icons
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icons
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icon.png
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icon.png
+  • no icons found, using provided fallback sources  
+  • exited          command=app-builder code=0 pid=12345 out={"icons":null,"isFallback":true}
+  • default Electron icon is used  reason=application icon is not set
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder encode-plist
+  • map async       taskCount=5
+  • exited          command=app-builder code=0 pid=12346
+  • getPublishConfigsForUpdateInfo: no publishConfigs, detect using repository info
+  • calling getInfo  reason=owner or project is not specified explicitly provider=github owner=undefined project=undefined
+  • executing       file=security args=find-identity -v
+  • executing       file=security args=find-identity -v -p 7af95cecdd0c3f541bcc912b113c3ed21ed9e4c7c32f40b73a00e2b19a9500f5 (sha256 hash)
+  • executed        file=security stdout=
+                        1) 5B912A03BF2EF2D50926D9682B0E8F168F5E025D "Developer ID Application: Micah Hobbs (3F2347KHYK)"
+                           1 valid identities found
+                      
+  • executed        file=security stdout=
+                        1) B2843E3388AD60DE30FE95983073588D5A45B055 "Developer ID Installer: Micah Hobbs (3F2347KHYK)"
+                        2) 5B912A03BF2EF2D50926D9682B0E8F168F5E025D "Developer ID Application: Micah Hobbs (3F2347KHYK)"
+                           2 valid identities found
+                      
+  • signing         file=dist/mac/electron-auto-update-example.app identityName=Developer ID Application: Micah Hobbs (3F2347KHYK) identityHash=5B912A03BF2EF2D50926D9682B0E8F168F5E025D provisioningProfile=none
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder decode-plist -f assets/mac/entitlements.mac.plist -f /Users/cindypak/Playground/electron-auto-update-example/dist/mac/electron-auto-update-example.app/Contents/Info.plist
+  • map async       taskCount=2
+  • exited          command=app-builder code=0 pid=12350 out=[{"com.apple.security.cs.disable-library-validation":true,"com.apple.security.cs.allow-jit":true,"com.apple.security.cs.allow-unsigned-executable-memory":true,"com.apple.security.cs.allow-dyld-environment-variables":true},{"CFBundleIdentifier":"com.electron.electron-auto-update-example","CFBundlePackageType":"APPL","LSApplicationCategoryType":"public.app-category.developer-tools","NSMicrophoneUsageDescription":"This app needs access to the microphone","CFBundleName":"electron-auto-update-example","DTSDKBuild":"11.0","DTSDKName":"macosx11.0","LSMinimumSystemVersion":"10.11.0","NSHumanReadableCopyright":"Copyright © 2021 electron-auto-update-example","NSQuitAlwaysKeepsWindows":false,"NSAppTransportSecurity":{"NSExceptionDomains":{"127.0.0.1":{"NSTemporaryExceptionAllowsInsecureHTTPSLoads":false,"NSTemporaryExceptionMinimumTLSVersion":"1.0","NSTemporaryExceptionRequiresForwardSecrecy":false,"NSIncludesSubdomains":false,"NSTemporaryExceptionAllowsInsecureHTTPLoads":true},"localhost":{"NSTemporaryExceptionAllowsInsecureHTTPSLoads":false,"NSTemporaryExceptionMinimumTLSVersion":"1.0","NSTemporaryExceptionRequiresForwardSecrecy":false,"NSIncludesSubdomains":false,"NSTemporaryExceptionAllowsInsecureHTTPLoads":true}},"NSAllowsArbitraryLoads":true,"NSAllowsLocalNetworking":true},"NSPrincipalClass":"AtomApplication","CFBundleDisplayName":"electron-auto-update-example","CFBundleVersion":"0.0.4","DTXcodeBuild":"12B45b","NSCameraUsageDescription":"This app needs access to the camera","CFBundleIconFile":"electron.icns","NSBluetoothPeripheralUsageDescription":"This app needs access to Bluetooth","CFBundleShortVersionString":"0.0.4","DTCompiler":"com.apple.compilers.llvm.clang.1_0","DTXcode":"1220","NSRequiresAquaSystemAppearance":false,"NSSupportsAutomaticGraphicsSwitching":true,"AsarIntegrity":"{\"checksums\":{\"app.asar\":\"xdFQ/e9u1cLivMN3KOgtLZInJsthu6XlhW1QiZu6YILYcXfYaJEDTYRsMp+Zt674hRVHqs3cHSH/4rmsZsW6Vg==\"}}","CFBundleExecutable":"electron-auto-update-example","CFBundleInfoDictionaryVersion":"6.0","NSBluetoothAlwaysUsageDescription":"This app needs access to Bluetooth","NSHighResolutionCapable":true,"NSMainNibFile":"MainMenu"}]
+  • building        target=macOS zip arch=x64 file=dist/electron-auto-update-example-0.0.4-mac.zip
+  • building        target=DMG arch=x64 file=dist/electron-auto-update-example-0.0.4.dmg
+  • skipped dependencies rebuild  reason=npmRebuild is set to false
+  • packaging       platform=win32 arch=x64 electron=12.0.7 appOutDir=dist/win-unpacked
+  • Unpacking electron zip  zipPath=undefined
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder unpack-electron --configuration [{"platform":"win32","arch":"x64","version":"12.0.7"}] --output /Users/cindypak/Playground/electron-auto-update-example/dist/win-unpacked --distMacOsAppName Electron.app
+  • executing       file=/Users/cindypak/Playground/electron-auto-update-example/node_modules/7zip-bin/mac/7za args=a -bd -mx=7 -mtc=off -mm=Deflate -mcu /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-mac.zip electron-auto-update-example.app cwd=/Users/cindypak/Playground/electron-auto-update-example/dist/mac
+  • spawning        command=hdiutil create -srcfolder /Users/cindypak/Playground/electron-auto-update-example/dist/mac/electron-auto-update-example.app -volname electron-auto-update-example 0.0.4 -anyowners -nospotlight -format UDRW -quiet -debug -fs HFS+ -fsargs -c c=64,a=16,e=16 /private/var/folders/gj/sk5jn1597m59101rz6w3v7rw0000gn/T/t-uXoSxR/0.dmg
+  • map async       taskCount=2
+  • map async       taskCount=1
+  • map async       taskCount=73
+<Setting up source ownership...>
+Initialising…
+<Preflighting size and permissions...>
+Initialising…
+Creating…
+<Synchronizing permissions...>
+Copying…
+  • exited          command=app-builder code=0 pid=12407
+  • getPublishConfigsForUpdateInfo: no publishConfigs, detect using repository info
+  • calling getInfo  reason=owner or project is not specified explicitly provider=github owner=undefined project=undefined
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder icon --format ico --root /Users/cindypak/Playground/electron-auto-update-example/build --root /Users/cindypak/Playground/electron-auto-update-example --out /Users/cindypak/Playground/electron-auto-update-example/dist/.icon-ico
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icon.ico
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icon.ico
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icons
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icons
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icon.png
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icon.png
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/build/icon.icns
+  • path doesn't exist  path=/Users/cindypak/Playground/electron-auto-update-example/icon.icns
+  • no icons found, using provided fallback sources  
+  • exited          command=app-builder code=0 pid=12440 out={"icons":null,"isFallback":true}
+  • default Electron icon is used  reason=application icon is not set
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder rcedit --args ["/Users/cindypak/Playground/electron-auto-update-example/dist/win-unpacked/electron-auto-update-example.exe","--set-version-string","FileDescription","electron-auto-update-example","--set-version-string","ProductName","electron-auto-update-example","--set-version-string","LegalCopyright","Copyright © 2021 electron-auto-update-example","--set-file-version","0.0.4","--set-product-version","0.0.4.0","--set-version-string","InternalName","electron-auto-update-example","--set-version-string","OriginalFilename",""]
+  • found existing  path=/Users/cindypak/Library/Caches/electron-builder/winCodeSign/winCodeSign-2.6.0
+  • found existing  path=/Users/cindypak/Library/Caches/electron-builder/wine/wine-4.0.1-mac
+  • execute command  command=/Users/cindypak/Library/Caches/electron-builder/wine/wine-4.0.1-mac/bin/wine64 /Users/cindypak/Library/Caches/electron-builder/winCodeSign/winCodeSign-2.6.0/rcedit-x64.exe /Users/cindypak/Playground/electron-auto-update-example/dist/win-unpacked/electron-auto-update-example.exe --set-version-string FileDescription electron-auto-update-example --set-version-string ProductName electron-auto-update-example --set-version-string LegalCopyright 'Copyright © 2021 electron-auto-update-example' --set-file-version 0.0.4 --set-product-version 0.0.4.0 --set-version-string InternalName electron-auto-update-example --set-version-string OriginalFilename ''
+                     workingDirectory=
+<Synchronizing permissions...>
+<Blessing...>
+<Detaching temporary mount point...>
+<Optimizing...>
+<Resetting source ownership...>
+Finishing…
+created: /private/var/folders/gj/sk5jn1597m59101rz6w3v7rw0000gn/T/t-uXoSxR/0.dmg
+  • exited          command=hdiutil code=0 pid=12409
+  • executing       file=hdiutil args=resize -size 210470007 /private/var/folders/gj/sk5jn1597m59101rz6w3v7rw0000gn/T/t-uXoSxR/0.dmg
+  • executed        file=hdiutil
+  • unmounting previous disk image  volumePath=/Volumes/electron-auto-update-example 0.0.4
+  • executing       file=hdiutil args=detach -quiet /Volumes/electron-auto-update-example 0.0.4
+  • executed        file=hdiutil
+  • executing       file=hdiutil args=attach -noverify -noautoopen -readwrite /private/var/folders/gj/sk5jn1597m59101rz6w3v7rw0000gn/T/t-uXoSxR/0.dmg
+  • executed        file=hdiutil stdout=
+                      /dev/disk2          	GUID_partition_scheme          	
+                      /dev/disk2s1        	Apple_HFS                      	/Volumes/electron-auto-update-example 0.0.4
+                      
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder dmg --volume /Volumes/electron-auto-update-example 0.0.4 --background /Users/cindypak/Playground/electron-auto-update-example/node_modules/dmg-builder/templates/background.tiff
+  • copy files      from=/Users/cindypak/Playground/electron-auto-update-example/node_modules/dmg-builder/templates/background.tiff
+                    to=/Volumes/electron-auto-update-example 0.0.4/.background/background.tiff
+                    isUseHardLinks=false
+  • execute command  command=sips -g pixelHeight -g pixelWidth /Users/cindypak/Playground/electron-auto-update-example/node_modules/dmg-builder/templates/background.tiff workingDirectory=
+  • command executed  executable=sips out=/Users/cindypak/Playground/electron-auto-update-example/node_modules/dmg-builder/templates/background.tiff
+  pixelHeight: 380
+  pixelWidth: 540
+
+  • exited          command=app-builder code=0 pid=12480 out={"backgroundWidth":540,"backgroundHeight":380,"backgroundFile":"/Volumes/electron-auto-update-example 0.0.4/.background/background.tiff"}
+  • executing       file=ln args=-s /Applications /Volumes/electron-auto-update-example 0.0.4/Applications
+  • executed        file=ln
+  • executing       file=/usr/bin/python args=/Users/cindypak/Playground/electron-auto-update-example/node_modules/dmg-builder/vendor/dmgbuild/core.py cwd=/Users/cindypak/Playground/electron-auto-update-example/node_modules/dmg-builder/vendor env=
+                      {
+                        "volumePath": "/Volumes/electron-auto-update-example 0.0.4",
+                        "appFileName": "electron-auto-update-example.app",
+                        "iconSize": 80,
+                        "iconTextSize": 12,
+                        "PYTHONIOENCODING": "utf8",
+                        "windowWidth": "540",
+                        "windowHeight": "380",
+                        "windowX": 400,
+                        "windowY": "530",
+                        "backgroundWidth": 540,
+                        "backgroundHeight": 380,
+                        "backgroundFile": "/Volumes/electron-auto-update-example 0.0.4/.background/background.tiff",
+                        "iconLocations": "'electron-auto-update-example.app': (130, 220),\n'Applications': (410, 220)"
+                      }
+  • command executed  executable=/Users/cindypak/Library/Caches/electron-builder/wine/wine-4.0.1-mac/bin/wine64
+                      errorOut=wine: cannot find L"C:\\windows\\system32\\winemenubuilder.exe"
+    000b:err:wineboot:ProcessRunKeys Error running cmd L"C:\\windows\\system32\\winemenubuilder.exe -a -r" (2)
+    0023:err:plugplay:runloop_thread Couldn't open IOHIDManager.
+    wine: Unhandled illegal instruction at address 0x7fff2065d62e (thread 0022), starting debugger...
+    0022:err:seh:start_debugger Couldn't start debugger ("winedbg --auto 30 112") (1115)
+    Read the Wine Developers Guide on how to set up winedbg or another debugger
+    
+  • exited          command=app-builder code=0 pid=12441
+wine&sign: 7s 943ms
+  • building        target=nsis file=dist/electron-auto-update-example Setup 0.0.4.exe archs=x64 oneClick=true perMachine=false
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder download-artifact --name nsis-3.0.4.1 --url https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-3.0.4.1/nsis-3.0.4.1.7z --sha512 VKMiizYdmNdJOWpRGz4trl4lD++BvYP2irAXpMilheUP0pc93iKlWAoP843Vlraj8YG19CVn0j+dCo/hURz9+Q==
+  • found existing  path=/Users/cindypak/Library/Caches/electron-builder/nsis/nsis-3.0.4.1
+  • exited          command=app-builder code=0 pid=12485 out=/Users/cindypak/Library/Caches/electron-builder/nsis/nsis-3.0.4.1
+  • executing       file=/Users/cindypak/Playground/electron-auto-update-example/node_modules/7zip-bin/mac/7za args=a -bd -mx=9 -md=1m -mtc=off -ms=off -mtm=off -mta=off /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z . -xr!*.avi -xr!*.mov -xr!*.m4v -xr!*.mp4 -xr!*.m4p -xr!*.qt -xr!*.mkv -xr!*.webm -xr!*.vmdk cwd=/Users/cindypak/Playground/electron-auto-update-example/dist/win-unpacked
+  • executed        file=/usr/bin/python
+  • executing       file=hdiutil args=detach -quiet /dev/disk2
+  • executed        file=hdiutil
+  • spawning        command=hdiutil convert /private/var/folders/gj/sk5jn1597m59101rz6w3v7rw0000gn/T/t-uXoSxR/0.dmg -ov -format UDZO -o /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4.dmg -imagekey zlib-level=9 -quiet
+  • exited          command=hdiutil code=0 pid=12490
+  • building block map  blockMapFile=dist/electron-auto-update-example-0.0.4.dmg.blockmap
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder blockmap --input /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4.dmg --output /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4.dmg.blockmap
+  • exited          command=app-builder code=0 pid=12494 out={"size":81938319,"sha512":"L8kDqJmdnEycGgfEHY72E/y8qTwgWybhkjHdZUEQ4i6V3xWpQCLB+s7bhJrUD0rWTWePTzAYEpp54gC3H1R83w=="}
+  • getPublishConfigsForUpdateInfo: no publishConfigs, detect using repository info
+  • calling getInfo  reason=owner or project is not specified explicitly provider=github owner=undefined project=undefined
+nsis package, x64: 41s 226ms
+  • executing       file=/Users/cindypak/Playground/electron-auto-update-example/node_modules/7zip-bin/mac/7za args=l /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z
+  • executed        file=/Users/cindypak/Playground/electron-auto-update-example/node_modules/7zip-bin/mac/7za stdout=
+                      
+                      7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+                      p7zip Version 16.02 (locale=utf8,Utf16=on,HugeFiles=on,64 bits,4 CPUs x64)
+                      
+                      Scanning the drive for archives:
+                      1 file, 58537973 bytes (56 MiB)
+                      
+                      Listing archive: /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z
+                      
+                      --
+                      Path = /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z
+                      Type = 7z
+                      Physical Size = 58537973
+                      Headers Size = 1499
+                      Method = LZMA2:20 LZMA:20 BCJ2
+                      Solid = -
+                      Blocks = 74
+                      
+                         Date      Time    Attr         Size   Compressed  Name
+                      ------------------- ----- ------------ ------------  ------------------------
+                                          D....            0            0  locales
+                                          D....            0            0  resources
+                                          D....            0            0  swiftshader
+                                          ....A         1060          673  LICENSE.electron.txt
+                                          ....A      5151652       175176  LICENSES.chromium.html
+                                          ....A       126365       116051  chrome_100_percent.pak
+                                          ....A       187883       173675  chrome_200_percent.pak
+                                          ....A     10412752      3412991  icudtl.dat
+                                          ....A       148881        30455  locales/am.pak
+                                          ....A       151672        30702  locales/ar.pak
+                                          ....A       162416        30586  locales/bg.pak
+                                          ....A       213604        32031  locales/bn.pak
+                                          ....A       104297        27970  locales/ca.pak
+                                          ....A       106408        29779  locales/cs.pak
+                                          ....A        97229        27050  locales/da.pak
+                                          ....A       103754        28481  locales/de.pak
+                                          ....A       180771        32725  locales/el.pak
+                                          ....A        86337        24789  locales/en-GB.pak
+                                          ....A        87068        24833  locales/en-US.pak
+                                          ....A       101941        27791  locales/es-419.pak
+                                          ....A       103980        27640  locales/es.pak
+                                          ....A        93296        27222  locales/et.pak
+                                          ....A       145299        29280  locales/fa.pak
+                                          ....A        95737        27355  locales/fi.pak
+                                          ....A       106027        27403  locales/fil.pak
+                                          ....A       112576        29060  locales/fr.pak
+                                          ....A       203977        31469  locales/gu.pak
+                                          ....A       127834        28476  locales/he.pak
+                                          ....A       211379        31979  locales/hi.pak
+                                          ....A       101535        28486  locales/hr.pak
+                                          ....A       108879        29980  locales/hu.pak
+                                          ....A        93327        25379  locales/id.pak
+                                          ....A       101380        27257  locales/it.pak
+                                          ....A       122772        27035  locales/ja.pak
+                                          ....A       234080        31736  locales/kn.pak
+                                          ....A       103205        26046  locales/ko.pak
+                                          ....A       110440        29310  locales/lt.pak
+                                          ....A       109598        29428  locales/lv.pak
+                                          ....A       246411        32807  locales/ml.pak
+                                          ....A       200367        30949  locales/mr.pak
+                                          ....A        95751        25441  locales/ms.pak
+                                          ....A        94350        26604  locales/nb.pak
+                                          ....A        98426        27407  locales/nl.pak
+                                          ....A       107059        29898  locales/pl.pak
+                                          ....A       101236        27520  locales/pt-BR.pak
+                                          ....A       101994        27382  locales/pt-PT.pak
+                                          ....A       104597        28189  locales/ro.pak
+                                          ....A       165148        31604  locales/ru.pak
+                                          ....A       108162        30541  locales/sk.pak
+                                          ....A       103446        28426  locales/sl.pak
+                                          ....A       155427        30325  locales/sr.pak
+                                          ....A        94390        26673  locales/sv.pak
+                                          ....A        96100        26838  locales/sw.pak
+                                          ....A       241049        31261  locales/ta.pak
+                                          ....A       223248        31970  locales/te.pak
+                                          ....A       192103        27977  locales/th.pak
+                                          ....A        99430        27413  locales/tr.pak
+                                          ....A       165820        31473  locales/uk.pak
+                                          ....A       117287        27244  locales/vi.pak
+                                          ....A        87466        25909  locales/zh-CN.pak
+                                          ....A        87660        25518  locales/zh-TW.pak
+                                          ....A      5140597      4871063  resources.pak
+                                          ....A          126           96  resources/app-update.yml
+                                          ....A      2734516       335517  resources/app.asar
+                                          ....A        47952        47466  snapshot_blob.bin
+                                          ....A       164752       161309  v8_context_snapshot.bin
+                                          ....A          106           96  vk_swiftshader_icd.json
+                                          ....A      4524696      1400651  d3dcompiler_47.dll
+                                          ....A    131112960     40810652  electron-auto-update-example.exe
+                                          ....A      2821120       927601  ffmpeg.dll
+                                          ....A       446464       153131  libEGL.dll
+                                          ....A      7900160      1999566  libGLESv2.dll
+                                          ....A       107520        49158  resources/elevate.exe
+                                          ....A       468992       162568  swiftshader/libEGL.dll
+                                          ....A      3263488       853930  swiftshader/libGLESv2.dll
+                                          ....A      4646400      1133975  vk_swiftshader.dll
+                                          ....A       734720       230027  vulkan-1.dll
+                      ------------------- ----- ------------ ------------  ------------------------
+                                                   186910907     58536474  74 files, 3 folders
+                      
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder download-artifact --name nsis-resources-3.4.1 --url https://github.com/electron-userland/electron-builder-binaries/releases/download/nsis-resources-3.4.1/nsis-resources-3.4.1.7z --sha512 Dqd6g+2buwwvoG1Vyf6BHR1b+25QMmPcwZx40atOT57gH27rkjOei1L0JTldxZu4NFoEmW4kJgZ3DlSWVON3+Q==
+  • found existing  path=/Users/cindypak/Library/Caches/electron-builder/nsis/nsis-resources-3.4.1
+  • exited          command=app-builder code=0 pid=12505 out=/Users/cindypak/Library/Caches/electron-builder/nsis/nsis-resources-3.4.1
+  • spawning        command=/Users/cindypak/Library/Caches/electron-builder/nsis/nsis-3.0.4.1/mac/makensis -WX -DAPP_ID=com.electron.electron-auto-update-example -DAPP_GUID=11950c07-e1b4-5c98-96fa-84d12c14c941 -DUNINSTALL_APP_KEY=11950c07-e1b4-5c98-96fa-84d12c14c941 -DPRODUCT_NAME=electron-auto-update-example -DPRODUCT_FILENAME=electron-auto-update-example -DAPP_FILENAME=electron-auto-update-example -DAPP_DESCRIPTION= -DVERSION=0.0.4 -DPROJECT_DIR=/Users/cindypak/Playground/electron-auto-update-example -DBUILD_RESOURCES_DIR=/Users/cindypak/Playground/electron-auto-update-example/build -DAPP_PACKAGE_NAME=electron-auto-update-example -DAPP_64=/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z -DAPP_64_NAME=electron-auto-update-example-0.0.4-x64.nsis.7z -DAPP_64_HASH=7FBD5F8CDE067C019582D2C1078F950CE9FA28E69E88174FAD27D22FA1ED1766B6B437992D9CCA8C48E9ED9C2D3EB0BE5C15F8DD43163C74EDDF8DFCFBA8EFE8 -DAPP_INSTALLER_STORE_FILE=electron-auto-update-example-updater\installer.exe -DCOMPRESSION_METHOD=7z -DONE_CLICK -DRUN_AFTER_FINISH -DSHORTCUT_NAME=electron-auto-update-example -DUNINSTALL_DISPLAY_NAME=electron-auto-update-example 0.0.4 -DESTIMATED_SIZE=182530 -DCOMPRESS=auto -DBUILD_UNINSTALLER -DUNINSTALLER_OUT_FILE=Z:\Users\cindypak\Playground\electron-auto-update-example\dist\__uninstaller-nsis-electron-auto-update-example.exe -XOutFile "/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example Setup 0.0.4.exe" -XVIProductVersion 0.0.4.0 -XVIAddVersionKey /LANG=1033 ProductName "electron-auto-update-example" -XVIAddVersionKey /LANG=1033 ProductVersion "0.0.4" -XVIAddVersionKey /LANG=1033 LegalCopyright "Copyright © 2021 electron-auto-update-example" -XVIAddVersionKey /LANG=1033 FileDescription "" -XVIAddVersionKey /LANG=1033 FileVersion "0.0.4" -XUnicode true -XSetCompressor zlib - cwd=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-lib/templates/nsis
+Command line defined: "APP_ID=com.electron.electron-auto-update-example"
+Command line defined: "APP_GUID=11950c07-e1b4-5c98-96fa-84d12c14c941"
+Command line defined: "UNINSTALL_APP_KEY=11950c07-e1b4-5c98-96fa-84d12c14c941"
+Command line defined: "PRODUCT_NAME=electron-auto-update-example"
+Command line defined: "PRODUCT_FILENAME=electron-auto-update-example"
+Command line defined: "APP_FILENAME=electron-auto-update-example"
+Command line defined: "APP_DESCRIPTION="
+Command line defined: "VERSION=0.0.4"
+Command line defined: "PROJECT_DIR=/Users/cindypak/Playground/electron-auto-update-example"
+Command line defined: "BUILD_RESOURCES_DIR=/Users/cindypak/Playground/electron-auto-update-example/build"
+Command line defined: "APP_PACKAGE_NAME=electron-auto-update-example"
+Command line defined: "APP_64=/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z"
+Command line defined: "APP_64_NAME=electron-auto-update-example-0.0.4-x64.nsis.7z"
+Command line defined: "APP_64_HASH=7FBD5F8CDE067C019582D2C1078F950CE9FA28E69E88174FAD27D22FA1ED1766B6B437992D9CCA8C48E9ED9C2D3EB0BE5C15F8DD43163C74EDDF8DFCFBA8EFE8"
+Command line defined: "APP_INSTALLER_STORE_FILE=electron-auto-update-example-updater\installer.exe"
+Command line defined: "COMPRESSION_METHOD=7z"
+Command line defined: "ONE_CLICK"
+Command line defined: "RUN_AFTER_FINISH"
+Command line defined: "SHORTCUT_NAME=electron-auto-update-example"
+Command line defined: "UNINSTALL_DISPLAY_NAME=electron-auto-update-example 0.0.4"
+Command line defined: "ESTIMATED_SIZE=182530"
+Command line defined: "COMPRESS=auto"
+Command line defined: "BUILD_UNINSTALLER"
+Command line defined: "UNINSTALLER_OUT_FILE=Z:\Users\cindypak\Playground\electron-auto-update-example\dist\__uninstaller-nsis-electron-auto-update-example.exe"
+Processing script file: "<stdin>" (UTF8)
+
+Processed 1 file, 9 command line commands, writing output (x86-unicode):
+
+Output: "/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example Setup 0.0.4.exe"
+Install: 1 page (64 bytes), 1 section (32792 bytes), 44 instructions (1232 bytes), 3171 strings (28862 bytes), 26 language tables (5044 bytes).
+Uninstall: 1 page (128 bytes), 1 section (32792 bytes), 599 instructions (16772 bytes), 5103 strings (54032 bytes), 26 language tables (6396 bytes).
+
+Using zlib compression.
+
+EXE header size:               57856 / 39424 bytes
+Install code:                  11461 / 52074 bytes
+Install data:                      0 / 8 bytes
+Uninstall code+data:           89087 / 94060 bytes
+CRC (0xBB003BFB):                  4 / 4 bytes
+
+Total size:                   158408 / 185570 bytes (85.3%)
+  • exited          command=makensis code=0 pid=12506
+  • spawning        command=/Users/cindypak/Library/Caches/electron-builder/nsis/nsis-3.0.4.1/mac/makensis -WX -DAPP_ID=com.electron.electron-auto-update-example -DAPP_GUID=11950c07-e1b4-5c98-96fa-84d12c14c941 -DUNINSTALL_APP_KEY=11950c07-e1b4-5c98-96fa-84d12c14c941 -DPRODUCT_NAME=electron-auto-update-example -DPRODUCT_FILENAME=electron-auto-update-example -DAPP_FILENAME=electron-auto-update-example -DAPP_DESCRIPTION= -DVERSION=0.0.4 -DPROJECT_DIR=/Users/cindypak/Playground/electron-auto-update-example -DBUILD_RESOURCES_DIR=/Users/cindypak/Playground/electron-auto-update-example/build -DAPP_PACKAGE_NAME=electron-auto-update-example -DAPP_64=/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z -DAPP_64_NAME=electron-auto-update-example-0.0.4-x64.nsis.7z -DAPP_64_HASH=7FBD5F8CDE067C019582D2C1078F950CE9FA28E69E88174FAD27D22FA1ED1766B6B437992D9CCA8C48E9ED9C2D3EB0BE5C15F8DD43163C74EDDF8DFCFBA8EFE8 -DAPP_INSTALLER_STORE_FILE=electron-auto-update-example-updater\installer.exe -DCOMPRESSION_METHOD=7z -DONE_CLICK -DRUN_AFTER_FINISH -DSHORTCUT_NAME=electron-auto-update-example -DUNINSTALL_DISPLAY_NAME=electron-auto-update-example 0.0.4 -DESTIMATED_SIZE=182530 -DCOMPRESS=auto -DUNINSTALLER_OUT_FILE=/Users/cindypak/Playground/electron-auto-update-example/dist/__uninstaller-nsis-electron-auto-update-example.exe -XOutFile "/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example Setup 0.0.4.exe" -XVIProductVersion 0.0.4.0 -XVIAddVersionKey /LANG=1033 ProductName "electron-auto-update-example" -XVIAddVersionKey /LANG=1033 ProductVersion "0.0.4" -XVIAddVersionKey /LANG=1033 LegalCopyright "Copyright © 2021 electron-auto-update-example" -XVIAddVersionKey /LANG=1033 FileDescription "" -XVIAddVersionKey /LANG=1033 FileVersion "0.0.4" -XUnicode true -XSetCompressor zlib - cwd=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-lib/templates/nsis
+Command line defined: "APP_ID=com.electron.electron-auto-update-example"
+Command line defined: "APP_GUID=11950c07-e1b4-5c98-96fa-84d12c14c941"
+Command line defined: "UNINSTALL_APP_KEY=11950c07-e1b4-5c98-96fa-84d12c14c941"
+Command line defined: "PRODUCT_NAME=electron-auto-update-example"
+Command line defined: "PRODUCT_FILENAME=electron-auto-update-example"
+Command line defined: "APP_FILENAME=electron-auto-update-example"
+Command line defined: "APP_DESCRIPTION="
+Command line defined: "VERSION=0.0.4"
+Command line defined: "PROJECT_DIR=/Users/cindypak/Playground/electron-auto-update-example"
+Command line defined: "BUILD_RESOURCES_DIR=/Users/cindypak/Playground/electron-auto-update-example/build"
+Command line defined: "APP_PACKAGE_NAME=electron-auto-update-example"
+Command line defined: "APP_64=/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-x64.nsis.7z"
+Command line defined: "APP_64_NAME=electron-auto-update-example-0.0.4-x64.nsis.7z"
+Command line defined: "APP_64_HASH=7FBD5F8CDE067C019582D2C1078F950CE9FA28E69E88174FAD27D22FA1ED1766B6B437992D9CCA8C48E9ED9C2D3EB0BE5C15F8DD43163C74EDDF8DFCFBA8EFE8"
+Command line defined: "APP_INSTALLER_STORE_FILE=electron-auto-update-example-updater\installer.exe"
+Command line defined: "COMPRESSION_METHOD=7z"
+Command line defined: "ONE_CLICK"
+Command line defined: "RUN_AFTER_FINISH"
+Command line defined: "SHORTCUT_NAME=electron-auto-update-example"
+Command line defined: "UNINSTALL_DISPLAY_NAME=electron-auto-update-example 0.0.4"
+Command line defined: "ESTIMATED_SIZE=182530"
+Command line defined: "COMPRESS=auto"
+Command line defined: "UNINSTALLER_OUT_FILE=/Users/cindypak/Playground/electron-auto-update-example/dist/__uninstaller-nsis-electron-auto-update-example.exe"
+Processing script file: "<stdin>" (UTF8)
+
+Processed 1 file, 9 command line commands, writing output (x86-unicode):
+
+Output: "/Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example Setup 0.0.4.exe"
+Install: 1 page (64 bytes), 1 section (32792 bytes), 798 instructions (22344 bytes), 6205 strings (59712 bytes), 26 language tables (6396 bytes).
+
+Using zlib compression.
+
+EXE header size:               57856 / 39424 bytes
+Install code:                  24052 / 105388 bytes
+Install data:               58957152 / 59248385 bytes
+CRC (0xE14C9BA6):                  4 / 4 bytes
+
+Total size:                 59039064 / 59393201 bytes (99.4%)
+  • exited          command=makensis code=0 pid=12507
+  • building block map  blockMapFile=dist/electron-auto-update-example Setup 0.0.4.exe.blockmap
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder blockmap --input /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example Setup 0.0.4.exe --output /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example Setup 0.0.4.exe.blockmap
+  • exited          command=app-builder code=0 pid=12508 out={"size":59039064,"sha512":"xg3DJv5n5wNijbWcgcEPJBoIPVxhNWJ/KU3HULaPyK0AGtcGOcClPg1GRX4OD8FVjXpAED6d/py2LGSwjCmvrg=="}
+  • getPublishConfigsForUpdateInfo: no publishConfigs, detect using repository info
+  • calling getInfo  reason=owner or project is not specified explicitly provider=github owner=undefined project=undefined
+  • building embedded block map  file=dist/electron-auto-update-example-0.0.4-mac.zip
+  • spawning        command=/Users/cindypak/Playground/electron-auto-update-example/node_modules/app-builder-bin/mac/app-builder blockmap --input /Users/cindypak/Playground/electron-auto-update-example/dist/electron-auto-update-example-0.0.4-mac.zip --compression deflate
+  • exited          command=app-builder code=0 pid=12509 out={"size":79583311,"sha512":"p6B1ARwvQIKSHJuccoPqMboHebKf7C6REobCvILXVbqtJoP3Fly7Y2QajS+EMmNb8gY68NKYqCk3Broeislspw==","blockMapSize":84914}
+  • getPublishConfigsForUpdateInfo: no publishConfigs, detect using repository info
+  • calling getInfo  reason=owner or project is not specified explicitly provider=github owner=undefined project=undefined
+  ⨯ GitHub Personal Access Token is not set, neither programmatically, nor using env "GH_TOKEN"
