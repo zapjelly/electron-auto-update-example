@@ -18,9 +18,12 @@
     "npmRebuild": false,
     "mac": {
       "hardenedRuntime": true,
-      "gatekeeperAssess": true,
+      "gatekeeperAssess": false,
       "entitlements": "assets/mac/entitlements.mac.plist",
       "entitlementsInherit": "assets/mac/entitlements.mac.plist"
+    },
+    "dmg": {
+      "sign": false
     }
   },
   "publish": {
