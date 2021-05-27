@@ -28,6 +28,8 @@ jobs:
           mkdir win
           cd win
           mv ../test2.txt .
+          cd ../
+          ls
       - name: Upload to s3
         uses: reggionick/s3-deploy@v3
         with:
