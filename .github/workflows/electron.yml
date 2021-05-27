@@ -19,6 +19,7 @@ jobs:
       - name: Rearrange file for s3
         run: |
           mkdir s3Folder
+          cd s3Folder
           touch test1.txt
           touch test2.txt
           mkdir mac
