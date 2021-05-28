@@ -103,8 +103,8 @@ jobs:
           cd dev
           mkdir mac
           mkdir win
-          cd ../
-          cp ./s3Folder/dev/test1.txt ./s3Folder/dev/mac/test1.txt
-          cp ./s3Folder/dev/test2.txt ./s3Folder/dev/win/test2.txt
+          cd ../../
+          cp ./s3Folder/test1.txt ./s3Folder/dev/mac/test1.txt
+          cp ./s3Folder/test2.txt ./s3Folder/dev/win/test2.txt
 
           ls
