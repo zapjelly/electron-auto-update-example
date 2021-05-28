@@ -8,7 +8,7 @@ on: push
 jobs:
   build_on_mac:
     runs-on: macOS-latest
-    # steps:
+     steps:
     #   - uses: actions/checkout@master
     #     with:
     #       # Update with your branch, that has the latest change
