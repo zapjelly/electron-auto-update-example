@@ -27,8 +27,8 @@ jobs:
           mkdir mac
           mkdir win
           cd ../../
-          cp ./s3Folder/test1.txt ./s3Folder/dev/mac/test1.txt
-          cp ./s3Folder/test2.txt ./s3Folder/dev/win/test2.txt
+          cp ./test1.txt ./s3Folder/dev/mac/test1.txt
+          cp ./test2.txt ./s3Folder/dev/win/test2.txt
 
           ls
 
