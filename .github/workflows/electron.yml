@@ -6,7 +6,7 @@ on: push
 
 # List contents
 jobs:
-  build_on_mac:
+  build_on_mac2:
     runs-on: macOS-latest
     steps:
       - name: Configure AWS Credentials
