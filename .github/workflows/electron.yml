@@ -107,4 +107,6 @@ jobs:
           cp ./s3Folder/test1.txt ./s3Folder/dev/mac/test1.txt
           cp ./s3Folder/test2.txt ./s3Folder/dev/win/test2.txt
 
+          cd s3Folder
+
           ls
