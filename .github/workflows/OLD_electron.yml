@@ -1,0 +1,110 @@
+# From https://medium.com/@johnjjung/building-an-electron-app-on-github-actions-windows-and-macos-53ab69703f7c
+name: CI
+
+# Run on push to 'release branch or master' branch
+on: push
+
+# List contents
+jobs:
+  build_on_mac:
+    runs-on: macOS-latest
+    # steps:
+    #   - uses: actions/checkout@master
+    #     with:
+    #       # Update with your branch, that has the latest change
+    #       ref: "feature/s3"
+    #   - uses: actions/setup-node@v2
+    #     with:
+    #       node-version: 15
+
+    #   - name: Create env file
+    #     run: |
+    #       touch .env
+    #       echo REACT_APP_SUPPORT_EMAIL=help@cashflowcoachingkit.com.au >> .env
+    #       echo REACT_APP_AWS_CONTENT_DELIVERY_URL=di8he5rpe0sl7.cloudfront.net >> .env
+    #       echo REACT_APP_GA_ID=UA-177371209-1 >> .env
+    #       echo REACT_APP_VERSION=$npm_package_version >> .env
+
+    #   - name: Install dependencies
+    #     run: yarn install
+
+    #   - name: Build electron
+    #     env:
+    #       CSC_LINK: ${{ secrets.CSC_LINK }}
+    #       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+    #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #     run: yarn electron:package
+
+    #   - name: See built binaries
+    #     run: ls ./dist
+
+    #   # Make available on GitHub Actions page
+    #   - name: Extract version
+    #     id: extract_version
+    #     uses: Saionaro/extract-package-version@v1.1.1
+    #   - uses: actions/upload-artifact@v2
+    #     with:
+    #       name: macOS
+    #       path: ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg
+    #   - uses: actions/upload-artifact@v2
+    #     with:
+    #       name: Windows
+    #       path: ./dist/electron-auto-update-example Setup ${{ steps.extract_version.outputs.version }}.exe
+    #   - name: Upload Release Assets
+    #     uses: softprops/action-gh-release@v1
+    #     with:
+    #       body: ${{ steps.extract_version.outputs.version }}
+    #       name: ${{ steps.extract_version.outputs.version }}
+    #       tag_name: v${{ steps.extract_version.outputs.version }}
+    #       files: ./dist/*
+    #     env:
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    #   - name: Configure AWS Credentials
+    #     uses: aws-actions/configure-aws-credentials@v1
+    #     with:
+    #       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #       # aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+    #       aws-region: ${{ secrets.S3_BUCKET_REGION }}
+      # - name: Rearrange file for s3
+      #   run: |
+      #     mkdir s3Folder
+      #     cp ./dist/*.dmg ./s3Folder/electron-auto-update-example.dmg
+      #     cp ./dist/*.exe ./s3Folder/electron-auto-update-example.Setup.exe
+      #     cd s3Folder
+      #     mkdir mac
+      #     cd mac
+      #     mv ../electron-auto-update-example.dmg .
+      #     cd ../
+      #     mkdir win
+      #     cd win
+      #     mv ../electron-auto-update-example.Setup.exe .
+      # - name: Upload to s3
+      #   uses: reggionick/s3-deploy@v3
+      #   with:
+      #     # the folder we have just created, with all our resource
+      #     folder: s3Folder
+      #     bucket: ${{ secrets.S3_BUCKET }}
+      #     dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+      #     bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+      #     invalidation: /
+      #     delete-removed: true
+      #     no-cache: true
+      #     private: true
+
+        - name: Rearrange file for s3
+          run: |
+            mkdir s3Folder
+            touch test1.txt
+            touch test2.txt
+            cd s3Folder
+            mkdir dev
+            cd dev
+            mkdir mac
+            mkdir win
+            cd ../
+            cp ./test1.txt ./s3Folder/dev/mac/test1.txt
+            cp ./test2.txt ./s3Folder/dev/win/test2.txt
+
+            ls
