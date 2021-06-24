@@ -46,11 +46,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: macOS
-          path: ./dist/electron-auto-update-example-${{ steps.extract_version.outputs.version }}.dmg
+          path: ./dist/*.dmg
       - uses: actions/upload-artifact@v2
         with:
           name: Windows
-          path: ./dist/electron-auto-update-example Setup ${{ steps.extract_version.outputs.version }}.exe
+          path: ./dist/*.exe
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
