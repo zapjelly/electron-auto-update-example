@@ -30,13 +30,6 @@
       "sign": false
     }
   },
-  "publish": {
-    "provider": "github",
-    "repo": "electron-auto-update-example",
-    "owner": "zapjelly",
-    "releaseType": "prerelease",
-    "publishAutoUpdate": true
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
