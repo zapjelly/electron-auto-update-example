@@ -2,7 +2,7 @@
   "name": "electron-auto-update-example",
   "version": "10.0.4",
   "description": "",
-  "main": "main.js",
+  "main": "public/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/zapjelly/electron-auto-update-example.git"
@@ -12,10 +12,14 @@
     "start": "electron .",
     "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder electron-builder  -mw --publish never",
-    "electron:package": "electron-builder -c.extraMetadata.main=main.js -mw --publish always"
+    "electron:package": "electron-builder -c.extraMetadata.main=build/main.js -mw --publish always"
   },
   "build": {
+    "productName": "Cash Flow Coaching Kit",
     "npmRebuild": false,
+    "directories": {
+      "buildResources": "build"
+    },
     "mac": {
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
