@@ -30,7 +30,7 @@
     "provider": "github",
     "repo": "electron-auto-update-example",
     "owner": "zapjelly",
-    "releaseType": "release",
+    "releaseType": "prerelease",
     "publishAutoUpdate": true
   },
   "author": "",
