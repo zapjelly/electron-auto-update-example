@@ -17,22 +17,23 @@ jobs:
         with:
           node-version: 15
 
-      #   - name: Create env file
-      #     run: |
-      #       touch .env
-      #       echo REACT_APP_SUPPORT_EMAIL=help@cashflowcoachingkit.com.au >> .env
-      #       echo REACT_APP_AWS_CONTENT_DELIVERY_URL=di8he5rpe0sl7.cloudfront.net >> .env
-      #       echo REACT_APP_GA_ID=UA-177371209-1 >> .env
-      #       echo REACT_APP_VERSION=$npm_package_version >> .env
+      - name: Create env file
+        run: |
+          touch .env
+          echo REACT_APP_SUPPORT_EMAIL=help@cashflowcoachingkit.com.au >> .env
+          echo REACT_APP_AWS_CONTENT_DELIVERY_URL=di8he5rpe0sl7.cloudfront.net >> .env
+          echo REACT_APP_GA_ID=UA-177371209-1 >> .env
+          echo REACT_APP_VERSION=$npm_package_version >> .env
+          echo GH_TOKEN=${{ secrets.GITHUB_TOKEN }} >> .env
 
       - name: Install dependencies
         run: yarn install
 
       - name: Build electron
-        #     env:
-        #       CSC_LINK: ${{ secrets.CSC_LINK }}
-        #       CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-        #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            env:
+              CSC_LINK: ${{ secrets.CSC_LINK }}
+              CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+              GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn electron:package
 
       - name: See built binaries
