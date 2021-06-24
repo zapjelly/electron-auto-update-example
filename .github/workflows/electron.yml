@@ -30,10 +30,10 @@ jobs:
         run: yarn install
 
       - name: Build electron
-          env:
-            CSC_LINK: ${{ secrets.CSC_LINK }}
-            CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn electron:package
 
       - name: See built binaries
