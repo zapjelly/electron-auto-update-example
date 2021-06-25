@@ -40,17 +40,17 @@ jobs:
         run: ls ./dist
 
       # Make available on GitHub Actions page
-      # - name: Extract version
-      #   id: extract_version
-      #   uses: Saionaro/extract-package-version@v1.1.1
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: macOS
-      #     path: ./dist/Cash Flow Coaching Kit-${{ steps.extract_version.outputs.version }}.dmg
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: Windows
-      #     path: ./dist/Cash Flow Coaching Kit Setup ${{ steps.extract_version.outputs.version }}.exe
+      - name: Extract version
+        id: extract_version
+        uses: Saionaro/extract-package-version@v1.1.1
+      - uses: actions/upload-artifact@v2
+        with:
+          name: macOS
+          path: ./dist/Cash Flow Coaching Kit-${{ steps.extract_version.outputs.version }}.dmg
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Windows
+          path: ./dist/Cash Flow Coaching Kit Setup ${{ steps.extract_version.outputs.version }}.exe
 
       # - name: Upload Release Assets
       #   uses: softprops/action-gh-release@v1
