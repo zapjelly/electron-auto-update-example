@@ -17,6 +17,15 @@
   "build": {
     "productName": "Cash Flow Coaching Kit",
     "npmRebuild": false,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "zapjelly",
+        "repo": "electron-auto-update-example",
+        "publishAutoUpdate": true,
+        "releaseType": "prerelease"
+      }
+    ],
     "directories": {
       "buildResources": "build"
     },
